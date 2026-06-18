@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+struct students{			
+	int rollno;
+	string name;
+	int marks;
+	};
+	int main(){
+	students arr[100];		
+	int count=0;
+	int choice;
+	do{											
+		cout<<"\n1. Add student:";
+		cout<<"\n2. Display students:";
+		cout<<"\n3. Search student:";
+		cout<<"\n4. Exit:"; 
+		
+		cout<<"\n Enter your choice:";
+		cin>>choice;
+	
+	if(choice==1){								
+		cout<<"Enter student name:";
+		cin>>arr[count].name;
+		
+		cout<<"Enter rollno:";
+		cin>>arr[count].rollno;
+		
+		cout<<"Enter marks:";
+		cin>>arr[count].marks;
+		
+		count++;
+	}
+	else if(choice==2){					
+	for(int i=0;i<count;i++)
+	{
+	cout<<arr[i].name<< " ";
+	cout<<arr[i].rollno<< " ";
+	cout<<arr[i].marks<<endl;	
+	}	
+	}
+	else if(choice==3)						
+	{int r;
+	bool found=false;
+	cout<<"Enter roll no.:";
+	cin>>r;
+	for(int i=0;i<count;i++){
+	if(arr[i].rollno==r){
+	found=true;
+	cout<<"Found!\n";
+	cout<<arr[i].name<<"";
+	cout<<arr[i].marks<<endl;
+	}
+	}
+	if(found==false)
+	{
+	cout<<"Student not found..!"<<endl;
+	}
+	}}while(choice!=4);
+	return 0;
+	}
